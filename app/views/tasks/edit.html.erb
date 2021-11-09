@@ -1,2 +1,9 @@
 <h1>Edit your task</h1>
-<%= render 'tasks/form' %>
+<%= form_for(@task) do |f| %>
+  <p>Title</p>
+  <%= f.text_field :title %>
+  <p>Details</p>
+  <%= f.text_area :details %>
+  <p><%= f.check_box :completed %> Completed</p>
+  <p><%= f.submit %></p>
+<% end %>
