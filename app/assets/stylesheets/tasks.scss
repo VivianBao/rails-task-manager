@@ -9,14 +9,6 @@ body {
 
 a {
   text-decoration: none;
-  color: white;
-}
-
-.tasks-container {
-  width: 400px;
-  margin: 100px auto;
-  padding: 10px;
-  background-color: #00AFB9;
 }
 
 
@@ -45,7 +37,7 @@ a {
     right:0;
     margin-left: auto;
     margin-right: auto;
-    color: gray;
+    color: rgb(100, 97, 97);
     font-size: 3em;
     font-weight: 600;
     background-color: rgba(246, 242, 242, 0.8);
@@ -53,6 +45,38 @@ a {
     padding: 40px;
     text-align: center;
   }
+}
+
+.tasks-container {
+  width: 400px;
+  margin: 20px auto;
+  padding: 10px;
+}
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  color: rgb(100, 97, 97);
+  text-align: center;
+}
+
+.task-content{
+  background-color: #00AFB9;
+  border-radius: 15px;
+  padding: 10px;
+  width: 80%;
+  text-align: left;
+  text-indent: 10px;
+  font-size: 1.1em;
+  a {
+    color: white;
+  }
+}
+
+.task-delete-btn, .task-checkbox {
+  color: rgb(100, 97, 97);
+  font-size: 1.2em;
 }
 
 /* Extra small devices (phones, 600px and down) */
