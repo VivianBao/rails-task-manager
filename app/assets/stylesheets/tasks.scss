@@ -49,7 +49,7 @@ a {
 
 .tasks-container {
   width: 400px;
-  margin: 20px auto;
+  margin: 15px auto;
   padding: 10px;
 }
 .task {
@@ -77,6 +77,16 @@ a {
 .task-delete-btn, .task-checkbox {
   color: rgb(100, 97, 97);
   font-size: 1.2em;
+}
+
+.task-add-btn {
+  width: 400px;
+  height: 100px;
+  padding: 15px;
+  margin: 10px auto;
+  a {
+    color: rgb(100, 97, 97);
+  }
 }
 
 /* Extra small devices (phones, 600px and down) */
