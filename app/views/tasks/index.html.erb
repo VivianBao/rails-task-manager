@@ -1,19 +1,26 @@
-<div class="header">
-  <h1>My Tasks</h1>
-  <p>All my tasks:</p>
+<div class="tasks-header">
+  <%= image_tag 'header.png' %>
 </div>
-<div class="task">
+<div class="title-container">
+  <span>My Tasks</span>
+</div>
+<div class="tasks-container">
   <% @tasks.each do |task| %>
-    <p><% if task.completed %>
-        <i class="far fa-check-square"></i>
+    <div class="task">
+      <% if task.completed %>
+        <i class="far fa-check-square task-checkbox"></i>
       <% else %>
-        <i class="far fa-square"></i>
+        <i class="far fa-square task-checkbox"></i>
       <% end %>
-    <%= link_to task.title, task_path(task) %>
-    <%= link_to task_path(task), method: :delete, data: { confirm: 'Are you sure?' } do %>
-      <i class="far fa-trash-alt"></i>
-    <% end %></p>
+      <div class="task-content">
+        <%= link_to task.title, task_path(task) %>
+      </div>
+      <%= link_to task_path(task), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <i class="far fa-trash-alt task-delete-btn"></i>
+      <% end %>
+    </div>
   <% end %>
+  <div class="task-add-btn">
+    <%= link_to '+ Add New Task', new_task_path %>
+  </div>
 </div>
-
-<p class="add_new"><%= link_to '+ Add New Task', new_task_path %></p>
