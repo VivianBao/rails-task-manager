@@ -1,8 +1,8 @@
 <div class="tasks-header">
   <%= image_tag 'header.png' %>
+  <div class="title"><h1>My Tasks</h1></div>
 </div>
 <div class="tasks-container">
-  <h1>My Tasks</h1>
   <p>All my tasks:</p>
   <% @tasks.each do |task| %>
     <p><% if task.completed %>
