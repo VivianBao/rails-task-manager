@@ -24,7 +24,7 @@ class TasksController < ApplicationController
 
   def update
     Task.find(params[:id]).update(task_params)
-    redirect_to task_path
+    redirect_to root_path
   end
 
   def edit

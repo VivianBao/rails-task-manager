@@ -7,25 +7,21 @@ export default class extends Controller {
   }
 
   submitHello() {
-  // const checkbox = document.getElementById('checkbox_submit');
-  // console.log(checkbox)
-  // console.log("submitCheckbox Connected");
-  console.log(this.checkboxTarget.checked)
-  console.log(this.formTarget)
-  Rails.ajax({
-    type: "patch",
-    url: `${this.formTarget.action}`,
-    data: JSON.stringify({
-      "task": { "completed": this.checkboxTarget.checked}
-    }),
-    dataType: "json",
-    contentType: "application/json",
-    success: function (result) {
-      formTarget.submit();
-    },
-    error: function (e) {
-      console.log(e);
-    },
-  })
+    this.formTarget.submit();
+  // Rails.ajax({
+  //   type: "patch",
+  //   url: `${this.formTarget.action}`,
+  //   data: JSON.stringify({
+  //     "task": { "completed": this.checkboxTarget.checked}
+  //   }),
+  //   dataType: "json",
+  //   contentType: "application/json",
+  //   success: function (result) {
+  //     formTarget.submit();
+  //   },
+  //   error: function (e) {
+  //     console.log(e);
+  //   },
+  // })
   }
 }
