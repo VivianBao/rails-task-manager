@@ -6,13 +6,11 @@ export default class extends Controller {
     console.log("Hello from our first Stimulus controller")
   }
 
-  submitCheckbox() {
-  const checkbox = document.getElementById('checkbox_submit');
-  console.log(checkbox)
-  checkbox.addEventListener('change', (event) => {
-    console.log("submitCheckbox Connected");
-    // console.log(event.currentTarget)
-  });
+  submitHello() {
+  // const checkbox = document.getElementById('checkbox_submit');
+  // console.log(checkbox)
+  // console.log("submitCheckbox Connected");
+  console.log("Hi hi")
   // Rails.ajax({
   //   url: "/books",
   //   type: "get",

@@ -21,7 +21,7 @@
       <% end %>
       -->
 
-      <input type="checkbox" id="checkbox_submit" />
+      <input type="checkbox" id="checkbox_submit" data-controller="submit-checkbox" data-action="change->submit-checkbox#submitHello"/>
       <div class="task-content">
         <%= link_to task.title, task_path(task) %>
       </div>
@@ -34,13 +34,3 @@
     <%= link_to '+ Add New Task', new_task_path %>
   </div>
 </div>
-
-<script>
-  const submitCheckbox = () => {
-  const checkbox = document.getElementById('checkbox_submit');
-  checkbox.addEventListener('change', (event) => {
-    console.log("SubmitCheckbox Connected");
-   });
-  }
-  submitCheckbox();
-</script>
