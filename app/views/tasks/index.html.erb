@@ -7,11 +7,21 @@
 <div class="tasks-container">
   <% @tasks.each do |task| %>
     <div class="task">
+      <!--
       <% if task.completed %>
         <i class="far fa-check-square task-checkbox"></i>
       <% else %>
         <i class="far fa-square task-checkbox"></i>
       <% end %>
+      -->
+      <!--
+      <%= form_for(task) do |f| %>
+        <p><%= f.check_box :completed, id: "checkbox_submit"%></p>
+        <p><%= f.submit %></p>
+      <% end %>
+      -->
+
+      <input type="checkbox" id="checkbox_submit">
       <div class="task-content">
         <%= link_to task.title, task_path(task) %>
       </div>
