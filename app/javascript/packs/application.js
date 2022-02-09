@@ -17,9 +17,11 @@ require("channels")
 
 const submitCheckbox = () => {
   const checkbox = document.getElementById('checkbox_submit');
-  checkbox.addEventListener('change', (event) => {
-    console.log("Connected");
-  });
+  console.log(checkbox)
+  // checkbox.addEventListener('change', (event) => {
+  //   console.log("submitCheckbox Connected");
+  //   console.log(event.currentTarget)
+  // });
   // Rails.ajax({
   //   url: "/books",
   //   type: "get",
@@ -29,3 +31,5 @@ const submitCheckbox = () => {
   // })
 }
 submitCheckbox();
+
+console.log("Connected")
