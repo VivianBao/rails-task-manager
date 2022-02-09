@@ -14,14 +14,14 @@
         <i class="far fa-square task-checkbox"></i>
       <% end %>
       -->
-      <!--
-      <%= form_for(task) do |f| %>
-        <p><%= f.check_box :completed, id: "checkbox_submit"%></p>
-        <p><%= f.submit %></p>
-      <% end %>
-      -->
+      <div class="form-container" data-controller="submit-checkbox" >
+        <%= form_for(task, remote: true) do |f| %>
+          <p><%= f.check_box :completed, id: "checkbox_submit", data: {action: "change->submit-checkbox#submitHello", 'submit-checkbox-target': 'test'}%></p>
+        <% end %>
+      </div>
 
-      <input type="checkbox" id="checkbox_submit" data-controller="submit-checkbox" data-action="change->submit-checkbox#submitHello"/>
+
+      <%# <input type="checkbox" id="checkbox_submit" data-controller="submit-checkbox" data-action="change->submit-checkbox#submitHello"/> %>
       <div class="task-content">
         <%= link_to task.title, task_path(task) %>
       </div>

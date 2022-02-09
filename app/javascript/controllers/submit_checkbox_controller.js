@@ -1,7 +1,7 @@
 import { Controller } from "@hotwired/stimulus"
 
 export default class extends Controller {
-
+  static targets=['test']
   connect() {
     console.log("Hello from our first Stimulus controller")
   }
@@ -10,7 +10,7 @@ export default class extends Controller {
   // const checkbox = document.getElementById('checkbox_submit');
   // console.log(checkbox)
   // console.log("submitCheckbox Connected");
-  console.log("Hi hi")
+  console.log(this.testTarget)
   // Rails.ajax({
   //   url: "/books",
   //   type: "get",
@@ -18,5 +18,5 @@ export default class extends Controller {
   //   success: function (data) { },
   //   error: function (data) { }
   // })
-}
+  }
 }
