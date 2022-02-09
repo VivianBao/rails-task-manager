@@ -15,8 +15,9 @@
       <% end %>
       -->
       <div class="form-container" data-controller="submit-checkbox" >
-        <%= form_for(task, remote: true) do |f| %>
-          <p><%= f.check_box :completed, id: "checkbox_submit", data: {action: "change->submit-checkbox#submitHello", 'submit-checkbox-target': 'test'}%></p>
+        <%= form_for(task, remote: true, data:{"submit-checkbox-target": 'form'}) do |f| %>
+          <p><%= f.check_box :completed, id: "checkbox_submit", data: {action: "change->submit-checkbox#submitHello", 'submit-checkbox-target': 'checkbox'}%></p>
+
         <% end %>
       </div>
 
