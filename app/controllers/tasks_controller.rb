@@ -25,6 +25,10 @@ class TasksController < ApplicationController
   def update
     Task.find(params[:id]).update(task_params)
     redirect_to root_path
+    respond_to do |format|
+     format.html { redirect_to request.referrer }
+     format.js {}
+    end
   end
 
   def edit

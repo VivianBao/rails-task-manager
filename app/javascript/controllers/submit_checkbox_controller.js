@@ -6,15 +6,22 @@ export default class extends Controller {
     console.log("Hello from our first Stimulus controller")
   }
 
-  submitForm() {
-    this.formTarget.submit();
-    console.log("submitForm Ran")
+  submitForm(form) {
+    // this.formTarget.submit();
+    console.log("submitForm Connected")
+    $.ajax({
+      type: form.method,
+      url: form.action,
+      data: $(form).serialize()
+    });
+
+    return false;
   }
 
-  stopRefresh() {
-    event.preventDefault()
-    console.log("stopRefresh ran")
-  }
+  // stopRefresh() {
+  //   event.preventDefault()
+  //   console.log("stopRefresh ran")
+  // }
 }
 
 // Rails.ajax({
