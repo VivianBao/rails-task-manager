@@ -6,21 +6,25 @@ export default class extends Controller {
     console.log("Hello from our first Stimulus controller")
   }
 
-  submitForm(form) {
+  submitForm() {
     // this.formTarget.submit();
     console.log("submitForm Connected")
+    let url = this.formTarget.action
+    let form = this.formTarget
     $.ajax({
-      type: form.method,
-      url: form.action,
-      data: $(form).serialize()
+      type: "PATCH",
+      url: url,
+      data: "task[completed]=true"
+      // dataType: "json"
     });
-
+    // console.log(this.formTarget.method)
+    // console.log(this.formTarget.result)
+    // console.log($form.attr("action"))
     if (this.checkboxTarget.checked) {
       this.taskContainerTarget.classList.add("completed")
     } else {
       this.taskContainerTarget.classList.remove("completed")
     }
-    console.log(this.taskContainerTarget)
     return false;
   }
 

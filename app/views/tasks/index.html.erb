@@ -13,9 +13,15 @@
           <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
         <% end %>
       </div>
-      <div class="task-content" data-submit-checkbox-target="taskContainer">
-        <%= link_to task.title, task_path(task), data: {'submit-checkbox-target': 'task'}%>
-      </div>
+      <% if task.completed %>
+        <div class="task-content completed" data-submit-checkbox-target="taskContainer">
+          <%= link_to task.title, task_path(task), data: {'submit-checkbox-target': 'task'}%>
+        </div>
+      <% else %>
+        <div class="task-content" data-submit-checkbox-target="taskContainer">
+          <%= link_to task.title, task_path(task), data: {'submit-checkbox-target': 'task'}%>
+        </div>
+      <% end %>
       <%= link_to task_path(task), method: :delete, data: { confirm: 'Are you sure?' } do %>
         <i class="far fa-trash-alt task-delete-btn"></i>
       <% end %>
