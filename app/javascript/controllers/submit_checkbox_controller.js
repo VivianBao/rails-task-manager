@@ -11,14 +11,15 @@ export default class extends Controller {
     console.log("submitForm Connected")
     let url = this.formTarget.action
     let form = this.formTarget
+    let value = this.checkboxTarget.checked
     $.ajax({
       type: "PATCH",
       url: url,
-      data: "task[completed]=true"
+      data: `task[completed]=${value}`
       // dataType: "json"
     });
     // console.log(this.formTarget.method)
-    // console.log(this.formTarget.result)
+    console.log(this.checkboxTarget.checked)
     // console.log($form.attr("action"))
     if (this.checkboxTarget.checked) {
       this.taskContainerTarget.classList.add("completed")
