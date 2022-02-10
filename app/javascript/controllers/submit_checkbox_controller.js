@@ -15,6 +15,12 @@ export default class extends Controller {
       data: $(form).serialize()
     });
 
+    if (this.checkboxTarget.checked) {
+      this.taskContainerTarget.classList.add("completed")
+    } else {
+      this.taskContainerTarget.classList.remove("completed")
+    }
+    console.log(this.taskContainerTarget)
     return false;
   }
 
