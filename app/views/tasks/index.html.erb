@@ -5,7 +5,7 @@
   <span>My Tasks</span>
 </div>
 <div class="tasks-container">
-  <% @tasks.each do |task| %>
+  <% @tasks.sort{ |a,b| a.id  <=> b.id }.each do |task| %>
     <div class="task" data-controller="submit-checkbox" >
       <div class="form-container" >
         <%= form_for(task, remote: true, data:{"submit-checkbox-target": 'form' }) do |f| %>
