@@ -90,9 +90,13 @@ a {
   width: 400px;
   height: 100px;
   padding: 15px;
-  margin: 10px auto;
+  margin: 0 auto;
+  position: relative;
   a {
     color: rgb(100, 97, 97);
+    position: absolute;
+
+    left: 140px;
   }
 }
 
@@ -133,13 +137,6 @@ a {
 }
 
 .form-container{
-  //  background-image: image-url('background.png');
-  //  background-position: 20% 80%;
-  //  background-size: 730px 450px;
-  //  width: 70%;
-  //  max-width: 730px;
-  //  height: 450px;
-  //  margin: 0 auto;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -150,14 +147,14 @@ a {
   width: 700px;
   // height: 60%;
   margin: 80px auto;
-  // opacity: 0.8;
+  border-radius: 5px;
 }
 
 .form-container-title{
   position: absolute;
   color: rgb(100, 97, 97);
   text-shadow: 0 0 3px rgb(234, 233, 233);
-  top: 160px;
+  top: 165px;
 }
 .form-container-content{
   position: absolute;
@@ -171,6 +168,7 @@ a {
   color: rgb(100, 97, 97);
   text-shadow: 0 0 3px rgb(234, 233, 233);
   background-color: rgba(248, 245, 246, 0.5);
+  border-radius: 5px;
   h1 {
     text-align: center;
     padding-top: 50px;
