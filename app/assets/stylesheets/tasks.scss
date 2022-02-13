@@ -1,9 +1,11 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+*{
+
+}
 
 body {
-  color: white;
   margin: 0;
 }
 
@@ -128,4 +130,74 @@ a {
     position: absolute;
     top: -21%;
   }
+}
+
+.form-container{
+  //  background-image: image-url('background.png');
+  //  background-position: 20% 80%;
+  //  background-size: 730px 450px;
+  //  width: 70%;
+  //  max-width: 730px;
+  //  height: 450px;
+  //  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.form-container-img{
+  width: 700px;
+  // height: 60%;
+  margin: 80px auto;
+  // opacity: 0.8;
+}
+
+.form-container-title{
+  position: absolute;
+  color: rgb(100, 97, 97);
+  text-shadow: 0 0 3px rgb(234, 233, 233);
+  top: 160px;
+}
+.form-container-content{
+  position: absolute;
+  top: 250px;
+  width: 400px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(100, 97, 97);
+  text-shadow: 0 0 3px rgb(234, 233, 233);
+  background-color: rgba(248, 245, 246, 0.5);
+  h1 {
+    text-align: center;
+    padding-top: 50px;
+  }
+}
+
+.form{
+  width: 240px;
+  text-align: center;
+  p {
+    margin: 10px;
+    font-size: 1.1rem
+  }
+  input{
+    width: 175px;
+  }
+}
+
+.submit-btn {
+  text-decoration: none;
+  background-color: rgb(254, 157, 173);
+  color: white;
+  text-shadow: 0 0 1.8px rgb(167, 164, 164);
+  border: none;
+  border-radius: 3px;
+  padding: 15px;
+  margin-top: 35px;
+  font-size: 1rem;
+  box-shadow: 0 0 2px rgb(215, 104, 121);
 }

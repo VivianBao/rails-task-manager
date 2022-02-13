@@ -1,7 +1,7 @@
-<%= form_for(@task) do |f| %>
+<%= form_for @task, html: {class: 'form'}  do |f| %>
   <p>Title</p>
   <%= f.text_field :title %>
   <p>Details</p>
   <%= f.text_area :details %>
-  <p><%= f.submit %></p>
+  <%= submit_tag 'Add New Task', {class: "submit-btn"} %>
 <% end %>
