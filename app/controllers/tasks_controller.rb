@@ -23,7 +23,6 @@ class TasksController < ApplicationController
   end
 
   def update
-    # byebug
     Task.find(params[:id]).update(task_params)
     redirect_to root_path
     respond_to do |format|
