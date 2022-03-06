@@ -5,27 +5,29 @@
   <span>My Tasks</span>
 </div>
 <div class="tasks-container">
-  <% @tasks.sort{ |a,b| a.id  <=> b.id }.each do |task| %>
-    <div class="task" data-controller="submit-checkbox" >
-      <div class="form-container" >
-        <%= form_for(task, remote: true, data:{"submit-checkbox-target": 'form' }) do |f| %>
-          <p><%= f.check_box :completed, id: "checkbox_submit", data: {action: "change->submit-checkbox#submitForm", 'submit-checkbox-target': 'checkbox'}%></p>
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <% if @tasks.length != 0 %>
+    <% @tasks.sort{ |a,b| a.id  <=> b.id }.each do |task| %>
+      <div class="task" data-controller="submit-checkbox" >
+        <div class="form-container" >
+          <%= form_for(task, remote: true, data:{"submit-checkbox-target": 'form' }) do |f| %>
+            <p><%= f.check_box :completed, id: "checkbox_submit", data: {action: "change->submit-checkbox#submitForm", 'submit-checkbox-target': 'checkbox'}%></p>
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <% end %>
+        </div>
+        <% if task.completed %>
+          <div class="task-content completed" data-submit-checkbox-target="taskContainer">
+            <%= link_to task.title, task_path(task), data: {'submit-checkbox-target': 'task'}%>
+          </div>
+        <% else %>
+          <div class="task-content" data-submit-checkbox-target="taskContainer">
+            <%= link_to task.title, task_path(task), data: {'submit-checkbox-target': 'task'}%>
+          </div>
+        <% end %>
+        <%= link_to task_path(task), method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="far fa-trash-alt task-delete-btn"></i>
         <% end %>
       </div>
-      <% if task.completed %>
-        <div class="task-content completed" data-submit-checkbox-target="taskContainer">
-          <%= link_to task.title, task_path(task), data: {'submit-checkbox-target': 'task'}%>
-        </div>
-      <% else %>
-        <div class="task-content" data-submit-checkbox-target="taskContainer">
-          <%= link_to task.title, task_path(task), data: {'submit-checkbox-target': 'task'}%>
-        </div>
-      <% end %>
-      <%= link_to task_path(task), method: :delete, data: { confirm: 'Are you sure?' } do %>
-        <i class="far fa-trash-alt task-delete-btn"></i>
-      <% end %>
-    </div>
+    <% end %>
   <% end %>
   <div class="task-add-btn">
     <%= link_to '+ Add New Task', new_task_path %>
