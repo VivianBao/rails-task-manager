@@ -185,6 +185,16 @@ a {
   input{
     width: 175px;
   }
+  .check-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    input{
+      width: 20px;
+      margin: 0;
+    }
+  }
 }
 
 .submit-btn {
@@ -194,8 +204,9 @@ a {
   text-shadow: 0 0 1.8px rgb(167, 164, 164);
   border: none;
   border-radius: 3px;
-  padding: 15px;
-  margin-top: 35px;
   font-size: 1rem;
   box-shadow: 0 0 2px rgb(215, 104, 121);
+  padding: 12px;
+  cursor: pointer;
+  margin-top: 25px;
 }

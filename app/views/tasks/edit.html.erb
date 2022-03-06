@@ -1,11 +1,17 @@
-<h1>Edit your task</h1>
-<div class="input_form">
-  <%= form_for(@task) do |f| %>
-    <p>Title</p>
-    <%= f.text_field :title %>
-    <p>Details</p>
-    <%= f.text_area :details %>
-    <p><%= f.check_box :completed %> Completed</p>
-    <p><%= f.submit %></p>
-  <% end %>
+<div class="form-container">
+  <%= image_tag 'backgroundFour.png', class: 'form-container-img' %>
+  <div class="form-container-title"><h1>Edit your task</h1></div>
+  <div class="form-container-content">
+    <%= form_for @task, html: {class: 'form'} do |f| %>
+      <p>Title</p>
+      <%= f.text_field :title %>
+      <p>Details</p>
+      <%= f.text_area :details %>
+      <div class="check-box">
+        <%= f.check_box :completed%>
+        <%= f.label :completed, "Completed?" %>
+      </div>
+      <%= submit_tag 'Update Task', {class: "submit-btn edit"} %>
+    <% end %>
+  </div>
 </div>
