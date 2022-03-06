@@ -1,5 +1,17 @@
-<h1><%= @task.title %></h1>
-<p><%= @task.details %></p>
-<p>This task is <%= @task.completed ? 'completed': 'not yet completed' %></p>
-<p><%= link_to 'Edit', edit_task_path %></p>
-<p><%= link_to 'Home', root_path %></p>
+<%= link_to root_path do %>
+  <i class="fas fa-arrow-circle-left return-btn"></i>
+<% end %>
+
+<div class="form-container">
+  <%= image_tag 'backgroundFour.png', class: 'form-container-img' %>
+  <div class="form-container-title"><h1><h1><%= @task.title %></h1></h1></div>
+  <div class="form-container-content">
+    <p><%= @task.details %></p>
+    <% if @task.completed %>
+     <p class="complete">Completed</p>
+    <% else %>
+      <p class="incomplete">Not Yet Completed</p>
+    <% end %>
+    <p><%= link_to 'Edit', edit_task_path, class: 'edit-btn' %></p>
+  </div>
+</div>

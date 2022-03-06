@@ -1,12 +1,9 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-*{
-
-}
-
 body {
   margin: 0;
+  position: relative;
 }
 
 a {
@@ -143,6 +140,7 @@ a {
   align-items: center;
   height: 100%;
 }
+
 .form-container-img{
   width: 700px;
   // height: 60%;
@@ -156,6 +154,7 @@ a {
   text-shadow: 0 0 3px rgb(234, 233, 233);
   top: 165px;
 }
+
 .form-container-content{
   position: absolute;
   top: 250px;
@@ -185,17 +184,55 @@ a {
   input{
     width: 175px;
   }
+  .check-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    input{
+      width: 20px;
+      margin: 0;
+    }
+  }
 }
 
-.submit-btn {
+.submit-btn, .edit-btn {
   text-decoration: none;
   background-color: rgb(254, 157, 173);
   color: white;
   text-shadow: 0 0 1.8px rgb(167, 164, 164);
   border: none;
   border-radius: 3px;
-  padding: 15px;
-  margin-top: 35px;
   font-size: 1rem;
   box-shadow: 0 0 2px rgb(215, 104, 121);
+  cursor: pointer;
+}
+.submit-btn{
+  padding: 12px;
+  margin-top: 25px;
+}
+
+.edit-btn {
+  padding: 10px;
+}
+
+.incomplete{
+  color: rgb(248, 68, 98);
+}
+
+.complete{
+  color: rgb(118, 231, 118);
+}
+
+.return-btn{
+  font-size: 30px;
+  margin: 20px;
+  position: absolute;
+  color:rgba(146, 141, 141, 0.8);
+  cursor: pointer;
+  z-index: 2;
+  &:hover{
+    transition: all 0.5s ease;
+    font-size: 33px;
+  }
 }
