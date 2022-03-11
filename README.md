@@ -4,6 +4,8 @@
 
 A practice web app project buildt using Ruby on Rails that helps you track all your tasks and daily to-dos. It's designed to be easy-to-use, whenever you have a task, add it to your task list, check it when it's done, and delete!
 
+Visit [site](https://task-manager-vb.herokuapp.com/)
+
 <!-- _DROP SCREENSHOT HERE_
 <br>
 App home: https://WHATEVER.herokuapp.com -->
